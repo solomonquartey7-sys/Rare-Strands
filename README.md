@@ -33,16 +33,27 @@ Look for `TODO` comments there:
 - **`contact`** — real email, phone, and Instagram link for the footer.
 - **`services`** — placeholder salon service list on `/services`; replace
   with the real menu, durations, and pricing.
-- **Collection images** — `public/images/collection/*.jpg` are temporary
-  free-license stock photos, texture-matched but not real inventory. Swap
-  in real product photography under the same filenames whenever it's ready.
+- **`faqs`** — the quick-reply Q&A shown in the bottom-right chat widget.
+  It's a keyword-matched helper, not live AI or a real person — keep
+  answers short and accurate to what's actually true.
+- **Images** — `public/images/collection/*.jpg` and `public/images/textures/*.jpg`
+  are temporary free-license stock photos, texture-matched but not real
+  inventory or models. Swap in real photography under the same filenames
+  whenever it's ready.
+- **`public/images/hero.jpg`** — client-supplied homepage background. This
+  file still had a "5/20" gallery-counter overlay baked in when supplied,
+  which usually means it was screenshotted from another seller's product
+  listing rather than owned outright. Confirm rights to it (or replace it)
+  before this site goes fully public — same filename, no code change needed.
 
 ## Pages
 
 This is a multi-page app (React Router), not just a single scrolling home:
 
-- **`/`** — home: hero, texture-filterable collection preview, shop CTA,
-  about, and a small booking banner.
+- **`/`** — home: photo hero, then a full-width "shop by texture" showcase
+  (one large image + write-up + "Shop This" per texture, Prada-style —
+  straight, wavy, curly, body wave, 613 blonde, bundles & closures), a shop
+  CTA, about, and a small booking banner.
 - **`/shop/:texture`** — one page per texture (`straight`, `wavy`, `curly`,
   `body-wave`, `blonde`, `bundles-closures`, or `all`), each listing every
   collection category that carries that texture.
@@ -51,7 +62,8 @@ This is a multi-page app (React Router), not just a single scrolling home:
 Navigation is a hamburger menu (top-left) that opens a full-screen overlay
 listing every texture page and the services page, plus a centered brand
 wordmark and a cart icon (top-right) — the cart has no live checkout yet,
-so it shows an honest "coming soon" empty state.
+so it shows an honest "coming soon" empty state. A chat bubble in the
+bottom-right corner answers common questions from `faqs` in `config.js`.
 
 ## Structure
 
@@ -67,13 +79,14 @@ src/
     Navbar.jsx         hamburger, centered brand, cart, scroll-hide behavior
     MenuOverlay.jsx    full-screen menu (textures + services)
     CategoryTile.jsx   shared collection tile (used on Home and TexturePage)
-    Hero.jsx
+    Hero.jsx           photo hero (public/images/hero.jpg)
     Marquee.jsx
     About.jsx
-    Collection.jsx
+    Collection.jsx     full-width "shop by texture" rows (Prada-style)
     Shop.jsx
     Booking.jsx        compact secondary banner, not a competing section
     Footer.jsx
+    ChatWidget.jsx      bottom-right FAQ helper, keyword-matched (not AI)
 ```
 
 ## Deploying

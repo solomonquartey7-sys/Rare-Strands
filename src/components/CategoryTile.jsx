@@ -5,7 +5,6 @@ export default function CategoryTile({ item, to }) {
     <>
       <div className="tile-media" style={{ backgroundImage: `url(${item.image})` }}>
         <span className="tile-photo-note">Stock photo &middot; real photos coming soon</span>
-        <span className="tile-kind">{item.kind}</span>
       </div>
       <div className="tile-body">
         <h3>{item.name}</h3>

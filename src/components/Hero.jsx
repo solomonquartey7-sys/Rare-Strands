@@ -1,8 +1,8 @@
-import { lengthsAvailable } from '../config'
+import { heroImage, lengthsAvailable } from '../config'
 
 export default function Hero() {
   return (
-    <section className="hero" id="top">
+    <section className="hero" id="top" style={{ backgroundImage: `url(${heroImage})` }}>
       <div className="container">
         <div className="rule" />
         <span className="eyebrow">The Rare Strands Hair Shop</span>

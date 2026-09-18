@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import ChatWidget from './ChatWidget'
 
 export default function Layout() {
   const location = useLocation()
@@ -24,6 +25,7 @@ export default function Layout() {
       <Navbar />
       <Outlet />
       <Footer />
+      <ChatWidget />
     </>
   )
 }

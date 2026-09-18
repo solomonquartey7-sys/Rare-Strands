@@ -14,6 +14,13 @@ export const business = {
     'long-lasting, and reusable with proper care.',
 }
 
+// Homepage hero background. NOTE: this file was supplied by the client from
+// what looks like another seller's product-gallery screenshot (it still had
+// a "5/20" image-counter overlay baked in). Using it as directed, but if
+// there isn't clear ownership/rights to it, swap it for a licensed photo —
+// same filename (public/images/hero.jpg) so no code change is needed.
+export const heroImage = '/images/hero.jpg'
+
 // TODO: Replace with the real StyleSeat booking link.
 // Find it in the StyleSeat app: More tab → My Profile → Promote → copy link.
 // It looks like: https://www.styleseat.com/v/yourbusinessname
@@ -58,7 +65,6 @@ export const collection = [
   {
     slug: 'raw-indian',
     name: 'Raw Indian Hair',
-    kind: 'Origin Collection',
     textures: ['Straight', 'Wavy', 'Curly'],
     filters: ['straight', 'wavy', 'curly'],
     description:
@@ -70,7 +76,6 @@ export const collection = [
   {
     slug: 'burmese-curly',
     name: 'Burmese Curly Hair',
-    kind: 'Origin Collection',
     textures: ['Curly'],
     filters: ['curly'],
     description:
@@ -80,7 +85,6 @@ export const collection = [
   {
     slug: 'raw-613-blonde',
     name: 'Raw 613 Blonde Hair',
-    kind: 'Origin Collection',
     textures: ['Blonde'],
     filters: ['blonde'],
     description:
@@ -90,7 +94,6 @@ export const collection = [
   {
     slug: 'virgin-613-body-wave',
     name: 'Virgin 613 Body Wave',
-    kind: 'Origin Collection',
     textures: ['Body Wave'],
     filters: ['body-wave', 'blonde'],
     description:
@@ -100,7 +103,6 @@ export const collection = [
   {
     slug: 'bundles-closures',
     name: 'Bundles & HD Lace Closures',
-    kind: 'Finishing Pieces',
     textures: ['Bundles', 'Bundle Deals', 'HD Lace Closures'],
     filters: ['bundles-closures'],
     description:
@@ -110,40 +112,66 @@ export const collection = [
   },
 ]
 
-// Quick-filter chips above the homepage collection grid, AND the menu/page
-// structure for /shop/:texture (each one is its own page, listing every
-// collection category that carries that texture tag).
+// Quick-filter chips on /shop/:texture pages, AND the big Prada-style
+// full-width rows on the homepage (Home renders one row per entry here,
+// skipping "all"). `image` files live in public/images/textures/ — temporary
+// free-license stock photos, texture-matched but not real Rare Strands
+// models; swap for real photography under the same filenames.
 export const textureFilters = [
   { value: 'all', label: 'All' },
   {
     value: 'straight',
     label: 'Straight',
     description: 'Sleek and smooth, built for a glassy finish.',
+    copy:
+      'Raw Indian straight — full from root to tip, with the kind of ' +
+      'natural shine that holds through heat and humidity alike.',
+    image: '/images/textures/straight.jpg',
   },
   {
     value: 'wavy',
     label: 'Wavy',
     description: 'Soft, natural movement with body.',
+    copy:
+      'Effortless, undone waves with real movement — falls naturally ' +
+      'without looking overstyled.',
+    image: '/images/textures/wavy.jpg',
   },
   {
     value: 'curly',
     label: 'Curly',
     description: 'Defined curls with density that holds.',
+    copy:
+      'Bouncy, well-defined curls with the density raw hair is known for ' +
+      '— holds its shape install after install.',
+    image: '/images/textures/curly.jpg',
   },
   {
     value: 'body-wave',
     label: 'Body Wave',
     description: 'Loose, voluminous waves from root to tip.',
+    copy:
+      'Loose, voluminous waves in a bright virgin 613 blonde — soft ' +
+      'enough for everyday, full enough for a night out.',
+    image: '/images/textures/body-wave.jpg',
   },
   {
     value: 'blonde',
     label: '613 Blonde',
     description: 'Naturally light raw hair, ready to tone.',
+    copy:
+      'Rare, naturally light raw hair with no over-processing — a true ' +
+      'blank canvas, ready to tone to your exact shade.',
+    image: '/images/textures/blonde.jpg',
   },
   {
     value: 'bundles-closures',
     label: 'Bundles & Closures',
     description: 'Bundles, bundle deals, and HD lace closures.',
+    copy:
+      'Mix-and-match bundles, bundle deals, and seamless HD lace closures ' +
+      'to complete any install, start to finish.',
+    image: '/images/textures/bundles-closures.jpg',
   },
 ]
 
@@ -168,5 +196,56 @@ export const services = [
   {
     name: 'Color Match & Toning',
     description: 'Toning raw 613 blonde or color-matching bundles to your desired shade.',
+  },
+]
+
+// FAQ data for the bottom-right chat widget. This is a simple keyword-matched
+// helper, not a live AI or a real person — keep answers short and accurate
+// to what's actually true today. `keywords` drive free-text matching;
+// `question` is what shows on the quick-reply buttons.
+export const faqs = [
+  {
+    question: 'What hair textures do you carry?',
+    keywords: ['texture', 'type', 'kind', 'straight', 'wavy', 'curly', 'body wave', 'blonde', '613'],
+    answer:
+      'We carry Raw Indian Hair (straight, wavy, curly), Burmese Curly, ' +
+      'Raw 613 Blonde, Virgin 613 Body Wave, and bundles with HD lace ' +
+      `closures. Lengths run ${lengthsAvailable}. Tap "Shop by Texture" in the menu to browse.`,
+  },
+  {
+    question: 'How much is the booking deposit?',
+    keywords: ['deposit', 'booking fee', 'appointment cost', 'how much to book'],
+    answer: `A $${booking.depositAmount} deposit secures a salon appointment, applied toward your service total.`,
+  },
+  {
+    question: 'How do I book an appointment?',
+    keywords: ['book', 'appointment', 'salon', 'install', 'schedule', 'styleseat'],
+    answer:
+      'Appointments are booked through StyleSeat — you can find the link ' +
+      'under "Book an Install" in the menu, or on the Services page.',
+  },
+  {
+    question: 'Can I reuse the hair?',
+    keywords: ['reuse', 'last', 'durable', 'care', 'maintain', 'wash'],
+    answer:
+      'Yes — all of our hair is raw or virgin, so with proper care ' +
+      '(gentle washing, silk/satin storage, minimal heat) it can be reused ' +
+      'across multiple installs.',
+  },
+  {
+    question: 'How do I order hair?',
+    keywords: ['order', 'buy', 'purchase', 'price', 'cost', 'shop', 'checkout', 'ship', 'shipping'],
+    answer:
+      'Our full online checkout is coming soon with Shopify. Until then, ' +
+      `reach out directly at ${contact.email} to order.`,
+  },
+  {
+    question: "What's the difference between raw and virgin hair?",
+    keywords: ['raw', 'virgin', 'difference', 'what is'],
+    answer:
+      'Raw hair is unprocessed, cut directly from a single donor with the ' +
+      "cuticle intact — it's the highest quality and most durable. Virgin " +
+      "hair hasn't been chemically treated (no color, perm, or relaxer) " +
+      'but may be collected from multiple donors.',
   },
 ]

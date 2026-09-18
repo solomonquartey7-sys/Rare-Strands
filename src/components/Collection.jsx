@@ -1,60 +1,33 @@
-import { useMemo, useState } from 'react'
-import { collection, textureFilters, lengthsAvailable } from '../config'
-import CategoryTile from './CategoryTile'
+import { Link } from 'react-router-dom'
+import { textureFilters } from '../config'
+
+const ROWS = textureFilters.filter((f) => f.value !== 'all')
 
 export default function Collection() {
-  const [activeFilter, setActiveFilter] = useState('all')
-
-  const visible = useMemo(() => {
-    if (activeFilter === 'all') return collection
-    return collection.filter((item) => item.filters.includes(activeFilter))
-  }, [activeFilter])
-
   return (
-    <section className="section collection" id="collection">
-      <div className="container">
-        <div className="section-heading">
-          <div className="rule" />
-          <span className="eyebrow">Our Collection</span>
-          <h2>Raw &amp; virgin hair, every texture</h2>
-          <p>
-            A snapshot of what we carry, organized by texture. Full pricing,
-            live availability, and photos are coming soon with our online
-            shop.
-          </p>
-        </div>
-
-        <div className="filter-bar" role="group" aria-label="Filter by texture">
-          {textureFilters.map((filter) => (
-            <button
-              key={filter.value}
-              type="button"
-              className={`filter-chip ${activeFilter === filter.value ? 'is-active' : ''}`}
-              onClick={() => setActiveFilter(filter.value)}
-              aria-pressed={activeFilter === filter.value}
-            >
-              {filter.label}
-            </button>
-          ))}
-        </div>
-
-        {visible.length === 0 ? (
-          <p className="collection-empty">
-            Nothing in this texture yet — check back soon, or ask us directly.
-          </p>
-        ) : (
-          <div className="collection-grid">
-            {visible.map((item) => (
-              <CategoryTile key={item.slug} item={item} to={`/shop/${item.filters[0]}`} />
-            ))}
-          </div>
-        )}
-
-        <p className="collection-footnote">
-          All lengths available from <strong>{lengthsAvailable}</strong>.
-          Ask us about bundle deals and HD lace closures.
-        </p>
+    <section className="texture-showcase" id="collection">
+      <div className="section-heading">
+        <div className="rule" />
+        <span className="eyebrow">Shop by Texture</span>
+        <h2>Every texture, made to last</h2>
       </div>
+
+      {ROWS.map((item, i) => (
+        <article className="texture-row" key={item.value}>
+          <div
+            className="texture-row-media"
+            style={{ backgroundImage: `url(${item.image})` }}
+          />
+          <div className="container texture-row-body">
+            <span className="texture-row-index">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{item.label}</h3>
+            <p>{item.copy}</p>
+            <Link className="btn btn-outline-dark" to={`/shop/${item.value}`}>
+              Shop This
+            </Link>
+          </div>
+        </article>
+      ))}
     </section>
   )
 }
