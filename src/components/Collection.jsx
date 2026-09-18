@@ -23,7 +23,7 @@ export default function Collection() {
             <h3>{item.label}</h3>
             <p>{item.copy}</p>
             <Link className="btn btn-outline-dark" to={`/shop/${item.value}`}>
-              Shop This
+              Shop This Look
             </Link>
           </div>
         </article>

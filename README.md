@@ -50,19 +50,21 @@ Look for `TODO` comments there:
 
 This is a multi-page app (React Router), not just a single scrolling home:
 
-- **`/`** — home: photo hero, then a full-width "shop by texture" showcase
-  (one large image + write-up + "Shop This" per texture, Prada-style —
-  straight, wavy, curly, body wave, 613 blonde, bundles & closures), a shop
-  CTA, about, and a small booking banner.
+- **`/`** — home: photo hero, then a horizontally-scrolling "Best Sellers"
+  photo strip (straight/wavy/curly/blonde, pictures only), then a full-width
+  "shop by texture" showcase (one large image + write-up + "Shop This Look"
+  per texture, Prada-style), a shop CTA, about, and a small booking banner.
 - **`/shop/:texture`** — one page per texture (`straight`, `wavy`, `curly`,
   `body-wave`, `blonde`, `bundles-closures`, or `all`), each listing every
   collection category that carries that texture.
 - **`/services`** — salon services + the StyleSeat booking CTA.
 
 Navigation is a hamburger menu (top-left) that opens a full-screen overlay
-listing every texture page and the services page, plus a centered brand
-wordmark and a cart icon (top-right) — the cart has no live checkout yet,
-so it shows an honest "coming soon" empty state. A chat bubble in the
+listing every texture page and the services page, a centered brand
+wordmark, and a search icon + cart icon (top-right). Search does a real
+client-side match against `searchIndex` in `config.js` (textures,
+categories, services) — no fake results. The cart has no live checkout
+yet, so it shows an honest "coming soon" empty state. A chat bubble in the
 bottom-right corner answers common questions from `faqs` in `config.js`.
 
 ## Structure
@@ -80,6 +82,7 @@ src/
     MenuOverlay.jsx    full-screen menu (textures + services)
     CategoryTile.jsx   shared collection tile (used on Home and TexturePage)
     Hero.jsx           photo hero (public/images/hero.jpg)
+    BestSellers.jsx    horizontal photo-only scroll strip
     Marquee.jsx
     About.jsx
     Collection.jsx     full-width "shop by texture" rows (Prada-style)

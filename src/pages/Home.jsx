@@ -1,4 +1,5 @@
 import Hero from '../components/Hero'
+import BestSellers from '../components/BestSellers'
 import Marquee from '../components/Marquee'
 import Collection from '../components/Collection'
 import Shop from '../components/Shop'
@@ -9,6 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <BestSellers />
       <Marquee />
       <Collection />
       <Shop />

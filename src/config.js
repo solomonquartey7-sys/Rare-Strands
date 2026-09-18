@@ -175,6 +175,20 @@ export const textureFilters = [
   },
 ]
 
+// Bottom-of-hero, horizontally-scrollable "Best Sellers" photo strip —
+// pictures only, no product data. Temporary free-license stock photos
+// (bundle close-ups), same swap-later note as everything else image-related.
+export const bestSellers = [
+  { image: '/images/bestsellers/straight-1.jpg', texture: 'straight', label: 'Straight' },
+  { image: '/images/bestsellers/wavy-1.jpg', texture: 'wavy', label: 'Wavy' },
+  { image: '/images/bestsellers/curly-1.jpg', texture: 'curly', label: 'Curly' },
+  { image: '/images/bestsellers/blonde-1.jpg', texture: 'blonde', label: '613 Blonde' },
+  { image: '/images/bestsellers/straight-2.jpg', texture: 'straight', label: 'Straight' },
+  { image: '/images/bestsellers/wavy-2.jpg', texture: 'wavy', label: 'Wavy' },
+  { image: '/images/bestsellers/curly-2.jpg', texture: 'curly', label: 'Curly' },
+  { image: '/images/bestsellers/blonde-2.jpg', texture: 'blonde', label: '613 Blonde' },
+]
+
 export const lengthsAvailable = '16" – 30"'
 
 // TODO: This is a placeholder list of typical salon services — replace with
@@ -248,4 +262,31 @@ export const faqs = [
       "hair hasn't been chemically treated (no color, perm, or relaxer) " +
       'but may be collected from multiple donors.',
   },
+]
+
+// Real, if simple, site search for the navbar search bar: every texture
+// page, collection category, and service, searched by name/description
+// client-side. No fake results — just a plain substring match over the
+// site's actual content.
+export const searchIndex = [
+  ...textureFilters
+    .filter((f) => f.value !== 'all')
+    .map((f) => ({
+      label: f.label,
+      to: `/shop/${f.value}`,
+      group: 'Shop by Texture',
+      searchable: `${f.label} ${f.description}`,
+    })),
+  ...collection.map((item) => ({
+    label: item.name,
+    to: `/shop/${item.filters[0]}`,
+    group: 'Collection',
+    searchable: `${item.name} ${item.textures.join(' ')} ${item.description}`,
+  })),
+  ...services.map((service) => ({
+    label: service.name,
+    to: '/services',
+    group: 'Services',
+    searchable: `${service.name} ${service.description}`,
+  })),
 ]
