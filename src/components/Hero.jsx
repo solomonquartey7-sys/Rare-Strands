@@ -4,11 +4,8 @@ export default function Hero() {
   return (
     <section className="hero" id="top" style={{ backgroundImage: `url(${heroImage})` }}>
       <div className="container">
+        <h1 className="sr-only">Rare Strands — Premium Raw &amp; Virgin Hair Extensions</h1>
         <div className="rule" />
-        <span className="eyebrow">The Rare Strands Hair Shop</span>
-        <h1>
-          Full, flawless, <em>rare</em> strands
-        </h1>
         <p className="lede">
           Shop premium raw and virgin hair extensions — full, long-lasting,
           and reusable with proper care. Bundles, closures, and every

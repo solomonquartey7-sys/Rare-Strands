@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <BestSellers />
       <Marquee />
+      <BestSellers />
       <Collection />
       <Shop />
       <About />

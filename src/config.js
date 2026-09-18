@@ -186,7 +186,6 @@ export const bestSellers = [
   { image: '/images/bestsellers/straight-2.jpg', texture: 'straight', label: 'Straight' },
   { image: '/images/bestsellers/wavy-2.jpg', texture: 'wavy', label: 'Wavy' },
   { image: '/images/bestsellers/curly-2.jpg', texture: 'curly', label: 'Curly' },
-  { image: '/images/bestsellers/blonde-2.jpg', texture: 'blonde', label: '613 Blonde' },
 ]
 
 export const lengthsAvailable = '16" – 30"'

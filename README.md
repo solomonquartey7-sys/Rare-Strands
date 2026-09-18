@@ -50,10 +50,12 @@ Look for `TODO` comments there:
 
 This is a multi-page app (React Router), not just a single scrolling home:
 
-- **`/`** — home: photo hero, then a horizontally-scrolling "Best Sellers"
-  photo strip (straight/wavy/curly/blonde, pictures only), then a full-width
-  "shop by texture" showcase (one large image + write-up + "Shop This Look"
-  per texture, Prada-style), a shop CTA, about, and a small booking banner.
+- **`/`** — home: photo hero (minimal — just a short line + CTAs, no big
+  headline), a scrolling trust marquee, a horizontally-scrolling "Best
+  Sellers" photo strip (straight/wavy/curly/blonde, pictures only), then a
+  full-width "shop by texture" showcase (one tall image + write-up + "Shop
+  This Look" per texture, Prada-style), a shop CTA, about, and a small
+  booking banner.
 - **`/shop/:texture`** — one page per texture (`straight`, `wavy`, `curly`,
   `body-wave`, `blonde`, `bundles-closures`, or `all`), each listing every
   collection category that carries that texture.
