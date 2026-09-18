@@ -52,18 +52,20 @@ Look for `TODO` comments there:
 This is a multi-page app (React Router), not just a single scrolling home:
 
 - **`/`** — home: near-full-screen (96vh) photo hero, `background-size:
-  cover` so it fills edge-to-edge on every screen (no headline text at
-  all — just the CTAs and stats, bottom-anchored over the photo; an
-  `<h1>` is kept screen-reader-only for SEO). On desktop the crop point
-  shifts down (`background-position`) so more of the photo is visible
-  instead of just the face — full "contain, no crop" isn't possible while
-  also filling a wide screen with a roughly square photo, so this is the
-  balance of the two. Then a scrolling trust marquee, a horizontally-
-  scrolling "Best Sellers" photo strip (straight/wavy/curly/blonde,
-  pictures only), a full-width "shop by texture" showcase (one image +
-  write-up + "Shop This Look" per texture, Prada-style), about, and a small booking
-  banner. There's no standalone "online shop" section — Shopify will hook
-  in directly at checkout later, not as a separate landing area.
+  cover` so it fills edge-to-edge on every screen. No text at all except
+  a single "Shop the Collection" button anchored bottom-left over the
+  photo (an `<h1>` is kept screen-reader-only for SEO); the overlay is
+  a light bottom-only gradient so the photo itself stays bright. On
+  desktop the crop point shifts down (`background-position`) so more of
+  the photo is visible instead of just the face — full "contain, no
+  crop" isn't possible while also filling a wide screen with a roughly
+  square photo, so this is the balance of the two. Then a scrolling
+  trust marquee, a horizontally-scrolling "Best Sellers" photo strip
+  (one straight/wavy/curly/blonde photo each), a full-width "shop by
+  texture" showcase (one image + write-up + "Shop This Look" per
+  texture, Prada-style), about, and a small booking banner. There's no
+  standalone "online shop" section — Shopify will hook in directly at
+  checkout later, not as a separate landing area.
 - **`/shop/:texture`** — one page per texture (`straight`, `wavy`, `curly`,
   `body-wave`, `blonde`, `bundles-closures`, or `all`), each listing every
   collection category that carries that texture.
