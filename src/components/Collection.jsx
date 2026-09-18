@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { collection, textureFilters, lengthsAvailable } from '../config'
+import CategoryTile from './CategoryTile'
 
 export default function Collection() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -44,29 +45,7 @@ export default function Collection() {
         ) : (
           <div className="collection-grid">
             {visible.map((item) => (
-              <article
-                className={`collection-tile ${item.featured ? 'collection-tile--featured' : ''}`}
-                key={item.slug}
-              >
-                <div
-                  className="tile-media"
-                  style={{ backgroundImage: `url(${item.image})` }}
-                >
-                  <span className="tile-photo-note">Stock photo &middot; real photos coming soon</span>
-                  <span className="tile-kind">{item.kind}</span>
-                </div>
-                <div className="tile-body">
-                  <h3>{item.name}</h3>
-                  <div className="textures">
-                    {item.textures.map((texture) => (
-                      <span className="texture-tag" key={texture}>
-                        {texture}
-                      </span>
-                    ))}
-                  </div>
-                  <p>{item.description}</p>
-                </div>
-              </article>
+              <CategoryTile key={item.slug} item={item} to={`/shop/${item.filters[0]}`} />
             ))}
           </div>
         )}

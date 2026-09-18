@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { STYLESEAT_URL, contact, business } from '../config'
 
 export default function Footer() {
@@ -17,8 +18,9 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Explore</h4>
           <ul>
-            <li><a href="#collection">Shop the Collection</a></li>
-            <li><a href="#about">About</a></li>
+            <li><Link to="/shop/all">Shop the Collection</Link></li>
+            <li><Link to="/#about">About</Link></li>
+            <li><Link to="/services">Services</Link></li>
             <li>
               <a href={STYLESEAT_URL} target="_blank" rel="noopener noreferrer">
                 Book an Install

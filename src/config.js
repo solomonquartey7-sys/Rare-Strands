@@ -110,15 +110,63 @@ export const collection = [
   },
 ]
 
-// Quick-filter chips shown above the collection grid.
+// Quick-filter chips above the homepage collection grid, AND the menu/page
+// structure for /shop/:texture (each one is its own page, listing every
+// collection category that carries that texture tag).
 export const textureFilters = [
   { value: 'all', label: 'All' },
-  { value: 'straight', label: 'Straight' },
-  { value: 'wavy', label: 'Wavy' },
-  { value: 'curly', label: 'Curly' },
-  { value: 'body-wave', label: 'Body Wave' },
-  { value: 'blonde', label: '613 Blonde' },
-  { value: 'bundles-closures', label: 'Bundles & Closures' },
+  {
+    value: 'straight',
+    label: 'Straight',
+    description: 'Sleek and smooth, built for a glassy finish.',
+  },
+  {
+    value: 'wavy',
+    label: 'Wavy',
+    description: 'Soft, natural movement with body.',
+  },
+  {
+    value: 'curly',
+    label: 'Curly',
+    description: 'Defined curls with density that holds.',
+  },
+  {
+    value: 'body-wave',
+    label: 'Body Wave',
+    description: 'Loose, voluminous waves from root to tip.',
+  },
+  {
+    value: 'blonde',
+    label: '613 Blonde',
+    description: 'Naturally light raw hair, ready to tone.',
+  },
+  {
+    value: 'bundles-closures',
+    label: 'Bundles & Closures',
+    description: 'Bundles, bundle deals, and HD lace closures.',
+  },
 ]
 
 export const lengthsAvailable = '16" – 30"'
+
+// TODO: This is a placeholder list of typical salon services — replace with
+// the real service menu, durations, and pricing. It's shown on /services
+// alongside the StyleSeat booking CTA.
+export const services = [
+  {
+    name: 'Install — Sew-In',
+    description: 'Full sew-in install using your own bundles or ours.',
+  },
+  {
+    name: 'Install — Frontal / Closure',
+    description: 'HD lace frontal or closure install, customized and melted.',
+  },
+  {
+    name: 'Take-Down & Maintenance',
+    description: 'Safe removal, wash, and re-install or upkeep of existing extensions.',
+  },
+  {
+    name: 'Color Match & Toning',
+    description: 'Toning raw 613 blonde or color-matching bundles to your desired shade.',
+  },
+]
