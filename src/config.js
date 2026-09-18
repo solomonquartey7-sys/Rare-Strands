@@ -50,6 +50,10 @@ export const contact = {
 // `filters` map each category to the quick-filter chips above the grid —
 // keep them in sync with `textureFilters` below if you add a new one.
 // `featured: true` renders a larger, more editorial tile.
+// `image` files live in public/images/collection/. The current set are
+// temporary stock stand-ins (free-license Pexels photos, texture-matched
+// but not actual Rare Strands inventory) — swap each for real product
+// photography as soon as it's available; same filenames, same slugs.
 export const collection = [
   {
     slug: 'raw-indian',
@@ -60,6 +64,7 @@ export const collection = [
     description:
       'Ethically sourced raw Indian hair in straight, wavy, and curly textures — ' +
       'full from root to tip and built to last through repeated styling.',
+    image: '/images/collection/raw-indian.jpg',
     featured: true,
   },
   {
@@ -70,6 +75,7 @@ export const collection = [
     filters: ['curly'],
     description:
       'Naturally bouncy, defined curls with the density and durability raw hair is known for.',
+    image: '/images/collection/burmese-curly.jpg',
   },
   {
     slug: 'raw-613-blonde',
@@ -79,6 +85,7 @@ export const collection = [
     filters: ['blonde'],
     description:
       'Rare, naturally light raw hair — a true blonde with no over-processing, ready to be toned to your shade.',
+    image: '/images/collection/raw-613-blonde.jpg',
   },
   {
     slug: 'virgin-613-body-wave',
@@ -88,6 +95,7 @@ export const collection = [
     filters: ['body-wave', 'blonde'],
     description:
       'Soft, voluminous body wave in a bright virgin 613 blonde.',
+    image: '/images/collection/virgin-613-body-wave.jpg',
   },
   {
     slug: 'bundles-closures',
@@ -97,6 +105,7 @@ export const collection = [
     filters: ['bundles-closures'],
     description:
       'Mix-and-match bundles, bundle deals, and seamless HD lace closures to complete any install.',
+    image: '/images/collection/bundles-closures.jpg',
     featured: true,
   },
 ]

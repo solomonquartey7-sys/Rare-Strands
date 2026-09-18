@@ -48,8 +48,11 @@ export default function Collection() {
                 className={`collection-tile ${item.featured ? 'collection-tile--featured' : ''}`}
                 key={item.slug}
               >
-                <div className="tile-media">
-                  <span className="tile-photo-note">Photo coming soon</span>
+                <div
+                  className="tile-media"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                >
+                  <span className="tile-photo-note">Stock photo &middot; real photos coming soon</span>
                   <span className="tile-kind">{item.kind}</span>
                 </div>
                 <div className="tile-body">

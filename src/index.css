@@ -673,11 +673,14 @@ ul {
 .tile-media {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(150deg, var(--brown-800) 0%, var(--brown-950) 100%);
+  background-color: var(--brown-950);
+  background-size: cover;
+  background-position: center 20%;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
   padding: 22px;
+  filter: saturate(0.92) contrast(1.02);
 }
 
 .collection-tile--featured .tile-media {
@@ -689,14 +692,8 @@ ul {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 20%, rgba(221, 183, 103, 0.28), transparent 55%),
-    repeating-linear-gradient(
-      120deg,
-      rgba(221, 183, 103, 0.06) 0px,
-      rgba(221, 183, 103, 0.06) 2px,
-      transparent 2px,
-      transparent 14px
-    );
+    linear-gradient(180deg, rgba(26, 17, 11, 0.05) 0%, rgba(26, 17, 11, 0.15) 45%, rgba(26, 17, 11, 0.88) 100%),
+    linear-gradient(15deg, rgba(169, 124, 47, 0.16), transparent 45%);
 }
 
 .tile-kind {
@@ -716,10 +713,14 @@ ul {
   position: absolute;
   top: 18px;
   right: 18px;
-  font-size: 0.65rem;
-  letter-spacing: 0.08em;
+  z-index: 1;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(253, 248, 240, 0.55);
+  color: rgba(253, 248, 240, 0.72);
+  background: rgba(26, 17, 11, 0.5);
+  padding: 4px 10px;
+  border-radius: 999px;
 }
 
 .tile-body {
