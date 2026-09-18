@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import MenuOverlay from './MenuOverlay'
 import { searchIndex } from '../config'
 
@@ -9,10 +9,26 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [hidden, setHidden] = useState(false)
+  const [atTop, setAtTop] = useState(true)
   const lastY = useRef(0)
   const cartRef = useRef(null)
   const searchRef = useRef(null)
   const navigate = useNavigate()
+  const location = useLocation()
+
+  // Every page opens on a dark hero/page-hero section. Stay transparent
+  // (with light icons/brand) for as long as that section is still visible,
+  // then switch to the solid cream bar once it's scrolled past.
+  useEffect(() => {
+    const target = document.querySelector('.hero, .page-hero')
+    if (!target) return
+
+    const observer = new IntersectionObserver(([entry]) => setAtTop(entry.isIntersecting), {
+      threshold: 0,
+    })
+    observer.observe(target)
+    return () => observer.disconnect()
+  }, [location.pathname])
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -115,7 +131,11 @@ export default function Navbar() {
 
   return (
     <>
-      <header className={`navbar ${hidden ? 'navbar--hidden' : ''} ${menuOpen ? 'navbar--overlay' : ''}`}>
+      <header
+        className={`navbar ${hidden ? 'navbar--hidden' : ''} ${
+          menuOpen || atTop ? 'navbar--overlay' : ''
+        }`}
+      >
         <div className="container navbar-inner">
           <button
             type="button"

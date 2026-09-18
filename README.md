@@ -50,12 +50,13 @@ Look for `TODO` comments there:
 
 This is a multi-page app (React Router), not just a single scrolling home:
 
-- **`/`** — home: photo hero (minimal — just a short line + CTAs, no big
-  headline), a scrolling trust marquee, a horizontally-scrolling "Best
-  Sellers" photo strip (straight/wavy/curly/blonde, pictures only), then a
-  full-width "shop by texture" showcase (one tall image + write-up + "Shop
-  This Look" per texture, Prada-style), a shop CTA, about, and a small
-  booking banner.
+- **`/`** — home: near-full-screen photo hero (no headline text at all —
+  just the CTAs and stats, bottom-anchored over the photo; an `<h1>` is
+  kept screen-reader-only for SEO), a scrolling trust marquee, a
+  horizontally-scrolling "Best Sellers" photo strip (straight/wavy/curly/
+  blonde, pictures only), then a full-width "shop by texture" showcase
+  (one image + write-up + "Shop This Look" per texture, Prada-style), a
+  shop CTA, about, and a small booking banner.
 - **`/shop/:texture`** — one page per texture (`straight`, `wavy`, `curly`,
   `body-wave`, `blonde`, `bundles-closures`, or `all`), each listing every
   collection category that carries that texture.
@@ -63,7 +64,10 @@ This is a multi-page app (React Router), not just a single scrolling home:
 
 Navigation is a hamburger menu (top-left) that opens a full-screen overlay
 listing every texture page and the services page, a centered brand
-wordmark, and a search icon + cart icon (top-right). Search does a real
+wordmark, and a search icon + cart icon (top-right). The navbar itself is
+transparent with light text over each page's dark hero/page-hero section
+(via an IntersectionObserver watching `.hero`/`.page-hero`) and turns into
+a solid cream bar once that section scrolls past. Search does a real
 client-side match against `searchIndex` in `config.js` (textures,
 categories, services) — no fake results. The cart has no live checkout
 yet, so it shows an honest "coming soon" empty state. A chat bubble in the

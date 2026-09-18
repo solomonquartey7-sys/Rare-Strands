@@ -487,7 +487,7 @@ ul {
   position: relative;
   background-color: var(--brown-950);
   background-size: cover;
-  background-position: center 15%;
+  background-position: center 8%;
   color: var(--cream-50);
   overflow: hidden;
   box-shadow: inset 0 0 0 1px rgba(221, 183, 103, 0.2);
@@ -505,43 +505,20 @@ ul {
 
 .hero .container {
   position: relative;
-  padding-top: 130px;
-  padding-bottom: 96px;
+  min-height: 92vh;
+  min-height: 92dvh;
+  padding-top: 110px;
+  padding-bottom: 56px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .hero .rule {
   background: var(--gold-500);
   opacity: 0.55;
-}
-
-.hero .eyebrow {
-  color: var(--gold-400);
-}
-
-.hero h1 {
-  color: var(--cream-50);
-  font-weight: 600;
-  font-size: clamp(2.6rem, 6.4vw, 4.4rem);
-  max-width: 800px;
-  margin-bottom: 0.35em;
-}
-
-.hero h1 em {
-  font-style: italic;
-  font-weight: 500;
-  color: var(--gold-400);
-}
-
-.hero p.lede {
-  color: rgba(253, 248, 240, 0.78);
-  max-width: 540px;
-  font-size: 1.08rem;
-  font-weight: 300;
-  margin-bottom: 2.4em;
 }
 
 .hero-actions {
@@ -1026,7 +1003,7 @@ ul {
 
 .texture-row-media {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 8;
   background-color: var(--brown-900);
   background-size: cover;
   background-position: center 22%;
@@ -1065,7 +1042,7 @@ ul {
 
 @media (min-width: 860px) {
   .texture-row-media {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 6;
   }
 }
 
