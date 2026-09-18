@@ -1,30 +1,26 @@
-import { STYLESEAT_URL, lengthsAvailable } from '../config'
+import { lengthsAvailable } from '../config'
 
 export default function Hero() {
   return (
     <section className="hero" id="top">
       <div className="container">
-        <span className="eyebrow">Raw &amp; Virgin Hair Extensions</span>
+        <div className="rule" />
+        <span className="eyebrow">The Rare Strands Hair Shop</span>
         <h1>
           Full, flawless, <em>rare</em> strands
         </h1>
         <p className="lede">
-          Premium raw and virgin hair extensions that are full, long-lasting,
-          and reusable with proper care — plus salon services to install and
-          maintain them.
+          Shop premium raw and virgin hair extensions — full, long-lasting,
+          and reusable with proper care. Bundles, closures, and every
+          texture, ready to order.
         </p>
 
         <div className="hero-actions">
           <a className="btn btn-primary" href="#collection">
             Shop the Collection
           </a>
-          <a
-            className="btn btn-outline"
-            href={STYLESEAT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Book an Appointment
+          <a className="hero-secondary-link" href="#booking">
+            Already have your hair? Book your install →
           </a>
         </div>
 

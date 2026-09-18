@@ -19,10 +19,13 @@ export const business = {
 // It looks like: https://www.styleseat.com/v/yourbusinessname
 export const STYLESEAT_URL = 'https://www.styleseat.com/'
 
+// Booking is secondary to the shop: a referral for customers who've already
+// bought hair and want it installed at the salon, not a competing homepage
+// section.
 export const booking = {
   depositAmount: 25,
   note:
-    'A $25 deposit is required to secure your salon appointment. ' +
+    'A $25 deposit is required to secure your salon install appointment. ' +
     'Deposits are applied toward your service total.',
 }
 
@@ -37,42 +40,76 @@ export const contact = {
   phone: null,
 }
 
-// The current hair collection. Update freely — this list drives the
-// "Our Collection" section on the homepage. Real product photos, exact
-// pricing, and variants will come from Shopify once the store is connected;
-// until then this section is an informational catalog, not a live cart.
+// The current hair collection, organized the way a client shops: by
+// texture/origin first, finishing goods (bundles/closures) second. Update
+// freely — this list drives the "Collection" section on the homepage.
+// Real product photos, exact pricing, and variants will come from Shopify
+// once the store is connected; until then this is an informational catalog,
+// not a live cart.
+//
+// `filters` map each category to the quick-filter chips above the grid —
+// keep them in sync with `textureFilters` below if you add a new one.
+// `featured: true` renders a larger, more editorial tile.
 export const collection = [
   {
+    slug: 'raw-indian',
     name: 'Raw Indian Hair',
+    kind: 'Origin Collection',
     textures: ['Straight', 'Wavy', 'Curly'],
+    filters: ['straight', 'wavy', 'curly'],
     description:
       'Ethically sourced raw Indian hair in straight, wavy, and curly textures — ' +
       'full from root to tip and built to last through repeated styling.',
+    featured: true,
   },
   {
+    slug: 'burmese-curly',
     name: 'Burmese Curly Hair',
+    kind: 'Origin Collection',
     textures: ['Curly'],
+    filters: ['curly'],
     description:
       'Naturally bouncy, defined curls with the density and durability raw hair is known for.',
   },
   {
+    slug: 'raw-613-blonde',
     name: 'Raw 613 Blonde Hair',
+    kind: 'Origin Collection',
     textures: ['Blonde'],
+    filters: ['blonde'],
     description:
       'Rare, naturally light raw hair — a true blonde with no over-processing, ready to be toned to your shade.',
   },
   {
+    slug: 'virgin-613-body-wave',
     name: 'Virgin 613 Body Wave',
+    kind: 'Origin Collection',
     textures: ['Body Wave'],
+    filters: ['body-wave', 'blonde'],
     description:
       'Soft, voluminous body wave in a bright virgin 613 blonde.',
   },
   {
+    slug: 'bundles-closures',
     name: 'Bundles & HD Lace Closures',
+    kind: 'Finishing Pieces',
     textures: ['Bundles', 'Bundle Deals', 'HD Lace Closures'],
+    filters: ['bundles-closures'],
     description:
       'Mix-and-match bundles, bundle deals, and seamless HD lace closures to complete any install.',
+    featured: true,
   },
+]
+
+// Quick-filter chips shown above the collection grid.
+export const textureFilters = [
+  { value: 'all', label: 'All' },
+  { value: 'straight', label: 'Straight' },
+  { value: 'wavy', label: 'Wavy' },
+  { value: 'curly', label: 'Curly' },
+  { value: 'body-wave', label: 'Body Wave' },
+  { value: 'blonde', label: '613 Blonde' },
+  { value: 'bundles-closures', label: 'Bundles & Closures' },
 ]
 
 export const lengthsAvailable = '16" – 30"'

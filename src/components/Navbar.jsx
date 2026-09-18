@@ -1,11 +1,9 @@
 import { useState } from 'react'
-import { STYLESEAT_URL } from '../config'
 
 const LINKS = [
+  { href: '#collection', label: 'Shop' },
   { href: '#about', label: 'About' },
-  { href: '#collection', label: 'Collection' },
-  { href: '#shop', label: 'Shop' },
-  { href: '#booking', label: 'Booking' },
+  { href: '#booking', label: 'Book an Install' },
 ]
 
 export default function Navbar() {
@@ -27,21 +25,15 @@ export default function Navbar() {
           ))}
           <a
             className="btn btn-outline-dark nav-cta-mobile"
-            href={STYLESEAT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#collection"
+            onClick={() => setOpen(false)}
           >
-            Book Now
+            Shop Now
           </a>
         </nav>
 
-        <a
-          className="btn btn-outline-dark nav-cta"
-          href={STYLESEAT_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Book Now
+        <a className="btn btn-outline-dark nav-cta" href="#collection">
+          Shop Now
         </a>
 
         <button

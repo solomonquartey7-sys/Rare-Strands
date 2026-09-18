@@ -3,6 +3,7 @@ export default function About() {
     <section className="section about" id="about">
       <div className="container">
         <div className="about-copy">
+          <div className="rule" style={{ marginLeft: 0 }} />
           <span className="eyebrow">Our Story</span>
           <h2>Hair that's built to be worn again and again</h2>
           <p>
@@ -18,7 +19,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="about-panel">
+        <div className="about-frame">
           <h3>Why Rare Strands</h3>
           <ul className="about-list">
             <li>

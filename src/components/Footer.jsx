@@ -17,12 +17,11 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Explore</h4>
           <ul>
+            <li><a href="#collection">Shop the Collection</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#collection">Collection</a></li>
-            <li><a href="#shop">Shop</a></li>
             <li>
               <a href={STYLESEAT_URL} target="_blank" rel="noopener noreferrer">
-                Book an Appointment
+                Book an Install
               </a>
             </li>
           </ul>
